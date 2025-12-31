@@ -113,7 +113,7 @@ body {
 .web-badge img{
     height: 31px;
     width: auto;
-    border-radius: 4px;
+    border-radius: 5px;
     display: block;
 }
 .web-badge::after {
