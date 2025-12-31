@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #333;
+    width: 100%;
+    z-index: 5;
+}
+
+.uh-oh {
+    max-width: 600px;
+    padding: 40px;
+}
+
+.uh-oh h3 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    letter-spacing: -0.02em;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #ffffff;
+}
+
+.uh-oh p {
+    margin-bottom: 24px;
+    font-size: 1.05rem;
+    color: #ffffff;
+    line-height: 1.8;
+}
+
+.uh-oh a {
+    color: #5b9fff;
+    text-decoration: none;
+    position: relative;
+    font-weight: 500;
+}
+
+.uh-oh a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background: #5b9fff;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.25s ease;
+}
+
+.uh-oh a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+body {
+    margin: 0;
+    font-family: monospace;
+    overflow: hidden;
+}
+
+#ascii-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    white-space: pre;
+    line-height: 1;
+    font-size: 15px;
+
+    color: #fff;
+    pointer-events: none;
+}
+
+.uh-oh {
+    position: relative;
+    z-index: 2;
+}
+.erm {
+    padding: 5px;
+    border: none;
+    transition: 0.2s ease;
+}
+.erm:hover {
+    cursor: pointer;
+    background: #333;
+}
