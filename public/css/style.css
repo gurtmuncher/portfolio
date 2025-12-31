@@ -91,3 +91,31 @@ body {
     cursor: pointer;
     background: #333;
 }
+.uh-oh{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.web-badges{
+    margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.web-badge{
+    display: inline-block;
+    image-rendering: pixelated;
+}
+
+.web-badge img{
+    height: 31px;
+    width: auto;
+    border-radius: 4px;
+    display: block;
+}
+.web-badge::after {
+    display: none !important;
+}
