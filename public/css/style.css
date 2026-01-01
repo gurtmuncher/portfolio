@@ -3,39 +3,48 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
-    background: #333;
+    margin: 0;
     width: 100%;
+    background: #333;
+    font-family: monospace;
+    overflow: hidden;
     z-index: 5;
 }
 
 .uh-oh {
     max-width: 600px;
     padding: 40px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .uh-oh h3 {
     font-size: 2.2rem;
     margin-bottom: 30px;
     letter-spacing: -0.02em;
+    color: #ffffff;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    color: #ffffff;
 }
 
 .uh-oh p {
     margin-bottom: 24px;
     font-size: 1.05rem;
-    color: #ffffff;
     line-height: 1.8;
+    color: #ffffff;
 }
 
 .uh-oh a {
-    color: #5b9fff;
-    text-decoration: none;
     position: relative;
     font-weight: 500;
+    color: #5b9fff;
+    text-decoration: none;
 }
 
 .uh-oh a::after {
@@ -55,48 +64,38 @@ body {
     transform: scaleX(1);
     transform-origin: left;
 }
-body {
-    margin: 0;
-    font-family: monospace;
-    overflow: hidden;
-}
 
 #ascii-bg {
     position: fixed;
     inset: 0;
     z-index: 0;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     white-space: pre;
     line-height: 1;
     font-size: 15px;
-
     color: #fff;
     pointer-events: none;
 }
 
-.uh-oh {
-    position: relative;
-    z-index: 2;
-}
 .erm {
-    padding: 5px;
+    position: fixed;
+    top: 5px;
+    left: 8px;
+    padding: 4px;
     border: none;
-    transition: 0.2s ease;
+    transition: background 0.2s ease;
+    z-index: 999999;
 }
+
 .erm:hover {
     cursor: pointer;
     background: #333;
+    color: #fff;
 }
-.uh-oh{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-.web-badges{
+
+.web-badges {
     margin-top: 14px;
     display: flex;
     flex-wrap: wrap;
@@ -105,17 +104,18 @@ body {
     justify-content: flex-start;
 }
 
-.web-badge{
+.web-badge {
     display: inline-block;
     image-rendering: pixelated;
 }
 
-.web-badge img{
+.web-badge img {
     height: 31px;
     width: auto;
     border-radius: 5px;
     display: block;
 }
+
 .web-badge::after {
     display: none !important;
 }
