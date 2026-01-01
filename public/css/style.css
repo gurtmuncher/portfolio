@@ -123,13 +123,10 @@ body {
     position: relative;
     display: inline-block;
 }
-.copy-pop {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
-}
-
-.copy-pop.show {
-    opacity: 1;
-    visibility: visible;
+.web-badge img {
+    width: 88px !important;
+    height: 31px !important;
+    max-width: none !important;
+    max-height: none !important;
+    display: block;
 }
