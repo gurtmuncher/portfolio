@@ -682,15 +682,20 @@
 </script>
 <script>
     (() => {
-        const isHome = location.hostname === "sassybutton.buzz";
+        if (location.hostname !== "sassybutton.buzz") return;
+
         const badge = document.getElementById("gurt-badge");
         if (!badge) return;
 
-        if (isHome) {
-            badge.addEventListener("click", (e) => {
-                e.preventDefault();
+        const pop = document.createElement("div");
+        pop.className = "copy-pop";
+        pop.textContent = "Copied paste anywhere u like";
+        badge.appendChild(pop);
 
-                const copiedHTML = `
+        badge.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            const htmlToCopy = `
 <div class="web-badges">
     <a href="https://sassybutton.buzz"
        target="_blank"
@@ -702,12 +707,11 @@
     </a>
 </div>`.trim();
 
-                navigator.clipboard.writeText(copiedHTML);
-            });
-        } else {
-            badge.setAttribute("href", "https://sassybutton.buzz");
-            badge.setAttribute("target", "_blank");
-        }
+            navigator.clipboard.writeText(htmlToCopy);
+
+            pop.classList.add("show");
+            setTimeout(() => pop.classList.remove("show"), 900);
+        });
     })();
 </script>
 
