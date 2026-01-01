@@ -20,6 +20,18 @@
     <p>i'm interested in developing, guitar, pc hardware, and gooning.</p>
 
     <div class="web-badges">
+        <a href=""
+           class="web-badge"
+           id="gurt-badge"
+           title="gurtmuncher sigma baller 67 67">
+
+            <img src="https://sassybutton.buzz/img/gurtmuncher.png"
+                 alt="gurtmuncher badge"
+                 loading="lazy">
+        </a>
+    </div>
+
+    <div class="web-badges">
         <a href="https://dashboard.simpleanalytics.com/sassybutton.buzz"
            target="_blank"
            referrerpolicy="origin"
@@ -34,8 +46,6 @@
                      crossorigin="anonymous"
                      alt="Simple Analytics">
             </picture>
-        </a>
-
     </div>
 </section>
 <script>
@@ -666,26 +676,41 @@
         asciiEl.style.filter = on ? "contrast(1.2)" : "none";
     }
 
-    document.addEventListener("keydown", (e) => {
-        if (e.key.length === 1) buffer += e.key.toLowerCase();
-        if (buffer.length > 20) buffer = buffer.slice(-20);
-
-        if (buffer.includes("gurtmuncher")) {
-            buffer = "";
-            setNightMode(true);
-            const old = cyclingMs;
-            cyclingMs = 4500;
-
-            setTimeout(() => {
-                cyclingMs = old;
-                setNightMode(false);
-            }, 15000);
-        }
-    });
 
     showTree(Math.floor(Math.random() * TREES.length));
     setTimeout(cycleTrees, cyclingMs);
 </script>
+<script>
+    (() => {
+        const isHome = location.hostname === "sassybutton.buzz";
+        const badge = document.getElementById("gurt-badge");
+        if (!badge) return;
+
+        if (isHome) {
+            badge.addEventListener("click", (e) => {
+                e.preventDefault();
+
+                const copiedHTML = `
+<div class="web-badges">
+    <a href="https://sassybutton.buzz"
+       target="_blank"
+       class="web-badge"
+       title="gurtmuncher sigma baller 67 67">
+        <img src="https://sassybutton.buzz/img/gurtmuncher.png"
+             alt="gurtmuncher badge"
+             loading="lazy">
+    </a>
+</div>`.trim();
+
+                navigator.clipboard.writeText(copiedHTML);
+            });
+        } else {
+            badge.setAttribute("href", "https://sassybutton.buzz");
+            badge.setAttribute("target", "_blank");
+        }
+    })();
+</script>
+
 <!-- 100% privacy-first analytics -->
 <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true" alt="" referrerpolicy="no-referrer-when-downgrade"/></noscript>

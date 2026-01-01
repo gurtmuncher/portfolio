@@ -110,8 +110,8 @@ body {
 }
 
 .web-badge img {
-    height: 31px;
-    width: auto;
+    height: 40px;
+    width: 100px;
     border-radius: 5px;
     display: block;
 }
